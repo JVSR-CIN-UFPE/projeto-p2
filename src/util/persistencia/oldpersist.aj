@@ -1,16 +1,16 @@
-package persistencia;
+package util.persistencia;
 
 import java.lang.reflect.Field;
 
 public aspect oldpersist {
 	
-	pointcut save() : call(* *.save());
+//	pointcut save() : call(private Object Object.save());
+//	
+//	before() : save() {
+//		// Make connection
+//	}
 	
-	before() : save() {
-		// Make connection
-	}
-	
-	after() : save() {
+//	after() : save() {
 		
 //		System.out.println(thisJoinPoint.getTarget().getClass().getName());
 //		
@@ -23,6 +23,6 @@ public aspect oldpersist {
 //				e.printStackTrace();
 //			}
 //		}
-	}
+//	}
 	
 }

@@ -6,21 +6,21 @@ import p2.Facade;
 
 public abstract class Tela {
 	
-	Tela _focus = this;
+	Tela _focus = null;
+	
+	boolean _terminate = false;
 	
 	Scanner input = new Scanner(System.in);
 	
 	Facade facade = Facade.getInstance();
 	
-	public Tela() {}
-	
-	public Tela(Tela tela) {
-		this._focus = tela;
+	public Tela() {
+		this._focus = this;
 	}
 	
 	public void run() {
-		while(_focus == this) {
-			launch();
+		while(true) {
+			_focus.launch();
 		}
 	}
 	

@@ -21,7 +21,7 @@ public class Facade {
 	}
 
 	public void save_book(Livro livro) {
-		(new Livro()).save();
+		livro.save();
 	}
 	
 }

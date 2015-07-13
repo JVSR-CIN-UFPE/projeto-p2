@@ -17,7 +17,5 @@ public class ConsultarLivro extends Tela {
 		String search_text = this.input.nextLine();
 		
 		livros = facade.search_books(search_text);
-		
-		facade.save_book(new Livro());
 	}
 }

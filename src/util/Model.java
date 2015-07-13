@@ -1,22 +1,23 @@
 package util;
 
+import java.io.Serializable;
+import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Vector;
 
-public abstract class Model {
-	
-	private Integer _id;
+public class Model implements Serializable {
 	
 	public void save() {
-		
-		System.out.println(getClass());
-		
+		for(Field f : this.getClass().getDeclaredFields()) {
+			f.setAccessible(true);
+//			System.out.println(f.getName());
+		}
 	}
 	
-	public static void delete() {
-		
-	}
 	
+	public static void delete() {}
+	
+	@SuppressWarnings("rawtypes")
 	public static List list(Object... filters) {
 		
 		// Before: Connect DB

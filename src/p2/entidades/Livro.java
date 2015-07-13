@@ -10,6 +10,11 @@ public class Livro extends Model {
 	
 	private String _autor;
 	
+	public Livro(String title, String author) {
+		this._titulo = title;
+		this._autor = author;
+	}
+
 	public Integer get_id() {
 		return _id;
 	}
