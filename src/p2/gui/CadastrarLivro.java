@@ -19,7 +19,7 @@ public class CadastrarLivro extends Tela {
 		String command = this.input.nextLine();
 		
 		if(command.equalsIgnoreCase("A")) {
-			this.facade.save_book(new Livro(title, author));
+			this.facade.save_livro(new Livro(title, author));
 		}
 		else if(command.equalsIgnoreCase("B")) {
 			// Re-launch view

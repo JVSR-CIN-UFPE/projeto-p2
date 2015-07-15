@@ -5,15 +5,14 @@ import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Vector;
 
+@SuppressWarnings("serial")
 public class Model implements Serializable {
 	
-	public void save() {
-		for(Field f : this.getClass().getDeclaredFields()) {
-			f.setAccessible(true);
-//			System.out.println(f.getName());
-		}
-	}
+	private Integer __internal_id__;
 	
+	public void save() {}
+	
+	public static void update() {}
 	
 	public static void delete() {}
 	
@@ -25,5 +24,11 @@ public class Model implements Serializable {
 		// After: Disconnect DB
 		
 		return new Vector();
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(!(obj instanceof Model)) return false;
+		return equals(this.__internal_id__.equals(((Model)obj).__internal_id__));
 	}
 }

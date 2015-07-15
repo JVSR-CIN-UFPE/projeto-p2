@@ -3,7 +3,7 @@ package p2.entidades;
 import util.Model;
 
 public class Livro extends Model {
-	
+
 	private Integer _id;
 	
 	private String _titulo;
@@ -38,5 +38,9 @@ public class Livro extends Model {
 	public void set_autor(String _autor) {
 		this._autor = _autor;
 	}
-
+	
+	@Override
+	public String toString() {
+		return this._id + "; " + this._titulo + "; " + this._autor;
+	}
 }
